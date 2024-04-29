@@ -9,7 +9,10 @@ public class JdbcEx4 {
 
 	public static void main(String[] args) {
 		String sql = "update dept set deptno=?,dname=?,loc=? where deptno = 80";
-		// 80, HR, JEJU
+		// 80, HR, JEJU 
+		//update dept set loc = ? where deptno =?
+		//pstmt.setString(1, "SEOUL");
+		//pstmt.setInt(2,60);
 		
 		try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/madangdb", "madang", "madang");
 				PreparedStatement pstmt = conn.prepareStatement(sql)){
